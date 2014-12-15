@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E5399E2-89E9-4CA5-A189-C8098C333055}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Simple.NH</RootNamespace>
+    <AssemblyName>Simple.NH</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\packages\NHibernate.4.0.2.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapping\ConfigurationBuilder.cs" />
+    <Compile Include="Bootstrapping\ContextInstancePolicy.cs" />
+    <Compile Include="Exceptions\EntityNotFoundException.cs" />
+    <Compile Include="Querying\QueryCacheFeature.cs" />
+    <Compile Include="Bootstrapping\IModelConfig.cs" />
+    <Compile Include="Bootstrapping\InternalUnitOfWorkFactory.cs" />
+    <Compile Include="Bootstrapping\InternalSessionFactoryCache.cs" />
+    <Compile Include="Bootstrapping\IsolatedThreadStaticSessionContext.cs" />
+    <Compile Include="Modeling\DomainEntity.cs" />
+    <Compile Include="Modeling\Entity.cs" />
+    <Compile Include="Modeling\IDomainEntity.cs" />
+    <Compile Include="Modeling\IEntity.cs" />
+    <Compile Include="Modeling\IHasId.cs" />
+    <Compile Include="Modeling\IHasName.cs" />
+    <Compile Include="Modeling\IReferenceEntity.cs" />
+    <Compile Include="Modeling\ITrackedEntity.cs" />
+    <Compile Include="Modeling\OrderAttribute.cs" />
+    <Compile Include="Modeling\SetPropertiesHandler.cs" />
+    <Compile Include="Modeling\TrackedEntity.cs" />
+    <Compile Include="Pipeline.cs" />
+    <Compile Include="Querying\BridgeFilterDefinition.cs" />
+    <Compile Include="Querying\DetachFilterAttribute.cs" />
+    <Compile Include="Querying\ManageFiltersFeature.cs" />
+    <Compile Include="Querying\SessionOpenedEvent.cs" />
+    <Compile Include="Querying\WireUpFiltersFeature.cs" />
+    <Compile Include="SimpleNH.cs" />
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="Mapping\SimpleSqliteDialect.cs" />
+    <Compile Include="SimpleNHOptions.cs" />
+    <Compile Include="Exceptions\SimpleNHException.cs" />
+    <Compile Include="ExtensionMethods\MappingExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\ModelConfigExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\NHibernateExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\ObjectExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\StringExtensionMethods.cs" />
+    <Compile Include="Bootstrapping\Feature.cs" />
+    <Compile Include="For.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Mapping\AbstractReferenceToType.cs" />
+    <Compile Include="Mapping\AssociationMappingAttribute.cs" />
+    <Compile Include="Mapping\BitwiseMaskType.cs" />
+    <Compile Include="Mapping\ClassMappingAttribute.cs" />
+    <Compile Include="Mapping\CollectionMappingAttribute.cs" />
+    <Compile Include="Mapping\DefaultAssociationMapping.cs" />
+    <Compile Include="Mapping\DiscriminatorColumnTypes.cs" />
+    <Compile Include="Mapping\EntityPropertyInfo.cs" />
+    <Compile Include="Mapping\ForeignKeyAliasAttribute.cs" />
+    <Compile Include="Mapping\ClassHandler.cs" />
+    <Compile Include="Mapping\CollectionHandler.cs" />
+    <Compile Include="Mapping\JoinedSubClassHandler.cs" />
+    <Compile Include="Mapping\ManyToOneHandler.cs" />
+    <Compile Include="Mapping\OneToOneHandler.cs" />
+    <Compile Include="Mapping\PropertyHandler.cs" />
+    <Compile Include="Mapping\SubClassHandler.cs" />
+    <Compile Include="Mapping\UnionSubClassHandler.cs" />
+    <Compile Include="Mapping\IdentifierMappingAttribute.cs" />
+    <Compile Include="Mapping\IgnoreInspectionAttribute.cs" />
+    <Compile Include="Mapping\InheritanceMappingSchemes.cs" />
+    <Compile Include="Mapping\InheritanceRootAttribute.cs" />
+    <Compile Include="Modeling\IReferenceTo.cs" />
+    <Compile Include="Mapping\PropertyMappingAttribute.cs" />
+    <Compile Include="Mapping\ReferenceToType.cs" />
+    <Compile Include="Mapping\SimpleModelMapper.cs" />
+    <Compile Include="Mapping\SubClassMappingAttribute.cs" />
+    <Compile Include="Mapping\TreatAsPropertyAttribute.cs" />
+    <Compile Include="Modeling\ReferenceEntity.cs" />
+    <Compile Include="Modeling\ReferenceTo.cs" />
+    <Compile Include="Now.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExtensionMethods\ReflectionExtensionMethods.cs" />
+    <Compile Include="Querying\AttachFilterAttribute.cs" />
+    <Compile Include="Querying\SoftDeleteFilter.cs" />
+    <Compile Include="Seeding\ISeedDataFactory.cs" />
+    <Compile Include="Seeding\SeedDataFactoryContext.cs" />
+    <Compile Include="Seeding\SeedDataPersister.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backlog.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
